@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Feb 18 11:08:23 2022
+
+@author: W3B5TER
+"""
+
+def f(x):
+    return x**2-3*x+1
+
+lowerlimit = 0
+upperlimit = 2
+accuracy = 0.01
+
+a = lowerlimit
+b = upperlimit
+m = (a+b)/2
+
+count = 0
+
+while b-a>accuracy:
+    if f(a)*f(m)<0:
+        b=m
+    else:
+        a=m
+    m = (a+b)/2
+
+while b-a>accuracy:
+    count +=1
+
+print (f'The solution of the equation is x= {m:3f}')
+print(count)
